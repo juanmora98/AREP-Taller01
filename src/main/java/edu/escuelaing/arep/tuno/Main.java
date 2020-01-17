@@ -3,24 +3,35 @@ package edu.escuelaing.arep.tuno;
 import edu.escuelaing.arep.tuno.collection.LinkedList;
 import edu.escuelaing.arep.tuno.statistics.StatisticUtils;
 
+import java.io.*;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args){
-        List<Double> linkedList = new LinkedList<Double>();
-        linkedList.add(160d);
-        linkedList.add(591d);
-        linkedList.add(114d);
-        linkedList.add(229d);
-        linkedList.add(230d);
-        linkedList.add(270d);
-        linkedList.add(128d);
-        linkedList.add(1657d);
-        linkedList.add(624d);
-        linkedList.add(1503d);
-        System.out.println(StatisticUtils.calculateMean(linkedList));
-        System.out.println(StatisticUtils.calculateStandardDeviation(linkedList));
+        if (args.length > 0){
+            File dataFile = new File(args[0]);
+            try {
+                BufferedReader br = new BufferedReader(new FileReader(dataFile));
+                List<Double> linkedList = new LinkedList<>();
+                String line;
+                while ((line = br.readLine() ) != null){
+                    double num = Double.parseDouble(line);
+                    linkedList.add(num);
+                }
+                double mean = StatisticUtils.calculateMean(linkedList);
+                double stdv = StatisticUtils.calculateStandardDeviation(linkedList);
+                System.out.printf("The mean of the data is: %.2f\nThe standard deviation is: %.2f\n", mean, stdv);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            System.out.println("[WARNING] No filepath for the data was provided");
+            System.exit(-1);
+        }
     }
 
 }

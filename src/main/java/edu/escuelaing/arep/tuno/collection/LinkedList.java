@@ -59,9 +59,6 @@ public class LinkedList<T> implements List<T> {
                 currentNode = currentNode.getNextNode();
                 return data;
             }
-
-            public void remove() {
-            }
         };
     }
 
