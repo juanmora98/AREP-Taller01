@@ -20,8 +20,8 @@ public class LinkedList<T> implements List<T> {
     }
 
     /**
-     * Adds the element to the
-     * @param data
+     * Adds the element to the end of the list
+     * @param data The element to add
      * @return true
      */
     public boolean add(T data) {
@@ -35,6 +35,34 @@ public class LinkedList<T> implements List<T> {
         }
         size++;
         return true;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+
+            Node<T> currentNode = head;
+
+            public boolean hasNext() {
+                return currentNode != null;
+            }
+
+            public T next() {
+                T data = currentNode.getData();
+                currentNode = currentNode.getNextNode();
+                return data;
+            }
+
+            public void remove() {
+            }
+        };
     }
 
     public boolean remove(Object o) {
@@ -101,20 +129,8 @@ public class LinkedList<T> implements List<T> {
         return null;
     }
 
-    public int size() {
-        return size;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
     public boolean contains(Object o) {
         return false;
-    }
-
-    public Iterator<T> iterator() {
-        return null;
     }
 
     public Object[] toArray() {
