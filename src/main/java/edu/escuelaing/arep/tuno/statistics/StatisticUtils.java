@@ -4,6 +4,11 @@ import java.util.List;
 
 public class StatisticUtils {
 
+    /**
+     * Calculates the mean of a set of real numbers
+     * @param numbers List of real numbers
+     * @return The mean of the given list
+     */
     public static double calculateMean(List<Double> numbers){
         int total = numbers.size();
         double sum = 0;
@@ -13,6 +18,11 @@ public class StatisticUtils {
         return sum/total;
     }
 
+    /**
+     * Calculates the standard deviation of a set of real numbers
+     * @param numbers List of real numbers
+     * @return The standard deviation of the given list
+     */
     public static double calculateStandardDeviation(List<Double> numbers){
         double total = numbers.size();
         double avg = calculateMean(numbers);
