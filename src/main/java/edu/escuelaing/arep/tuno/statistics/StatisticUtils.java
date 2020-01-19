@@ -2,6 +2,9 @@ package edu.escuelaing.arep.tuno.statistics;
 
 import java.util.List;
 
+/**
+ * Class for utility statistics methods
+ */
 public class StatisticUtils {
 
     /**

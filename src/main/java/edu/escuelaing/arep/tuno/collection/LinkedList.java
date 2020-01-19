@@ -58,7 +58,7 @@ public class LinkedList<T> implements List<T> {
      *
      * @param i Index of the element to get
      * @return The element at the specified position
-     * @Throws IndexOutOfBoundsException if the index is negative or equal or greater than the linked list's size
+     * @throws IndexOutOfBoundsException if the index is negative or equal or greater than the linked list's size
      */
     public T get(int i) {
         if (i < 0 || i >= size) {

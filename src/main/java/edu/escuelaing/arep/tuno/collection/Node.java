@@ -44,6 +44,7 @@ public class Node<T> {
 
     /**
      * Gets the next node
+     * @return The next node
      */
     public Node<T> getNextNode() {
         return nextNode;
