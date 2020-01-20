@@ -35,7 +35,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 If the command is not recognized, you can follow the instructions to install Maven [here.](https://maven.apache.org/install.html)
 
-### Installing and Running the Project
+### Installing
 
 Clone the repository and go to the folder `AREP-Taller01`.
 
@@ -49,6 +49,7 @@ mvn package
 
 This downloads the dependencies needed for the project and executes the tests. After it finishes, the project its ready for it to be used.
 
+### Running the Project
 The program receives a path to a file with the data to be used, the project contains two test data files `dat01.txt` and `dat02.txt` in [`src/main/resources`](src/main/resources).
 
 To execute the program, in the command prompt type:
