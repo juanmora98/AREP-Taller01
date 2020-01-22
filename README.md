@@ -140,6 +140,9 @@ public class StatisticUtilsTest {
 }
 ```
 
+## Design Document
+The document describing the desing is [DESING.pdf](DESING.pdf).
+
 ## JavaDocs
 JavaDocs are available in the `javadocs` folder. Opening `javadocs/index.html` in the browser will display them.
 
